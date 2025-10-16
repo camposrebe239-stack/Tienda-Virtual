@@ -1,0 +1,249 @@
+/* ----------  RESET BÁSICO  ---------- */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color:#f5f5f5;
+    color:#222;
+    line-height:1.5;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+}
+
+/* ----------  NAVEGACIÓN  ---------- */
+nav{
+    background-color:#004c99;
+    width:100%;
+}
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    gap:2rem;
+    padding:1rem 0;
+}
+nav a{
+    color:#ffffff;
+    text-decoration:none;
+    font-weight:500;
+    padding:.4rem .6rem;
+    border-radius:4px;
+    transition:background .2s;
+}
+nav a:hover,
+nav a:focus{
+    background-color:rgba(255,255,255,.15);
+}
+
+/* ----------  ENCABEZADOS  ---------- */
+header{
+    text-align:center;
+    padding:2.5rem 1rem 2rem;
+    background-color:#ffffff;
+    border-bottom:1px solid #e0e0e0;
+}
+h1{
+    font-size:1.8rem;
+    margin-bottom:.5rem;
+    color:#003366;
+}
+header p{
+    color:#555;
+}
+
+/* ----------  SECCIONES / BOTONES  ---------- */
+section{
+    margin:2rem auto;
+    max-width:900px;
+    width:90%;
+    text-align:center;
+}
+.boton{
+    display:inline-block;
+    margin:.5rem;
+    padding:.75rem 1.5rem;
+    background-color:#004c99;
+    color:#fff;
+    border:none;
+    border-radius:4px;
+    font-size:1rem;
+    cursor:pointer;
+    text-decoration:none;
+    transition:background .2s, transform .1s;
+}
+.boton:hover{
+    background-color:#003366;
+}
+.boton:active{
+    transform:scale(.98);
+}
+
+/* ----------  TABLAS  ---------- */
+table{
+    width:68%;
+    margin:2rem auto;
+    border-collapse:collapse;
+    background:#fff;
+    box-shadow:0 1px 3px rgba(0,0,0,.08);
+    border-radius:6px;
+    overflow:hidden;
+}
+thead{
+    background-color:#e6f0fa;
+    color:#003366;
+}
+th, td{
+    padding:.75rem 1rem;
+    text-align:left;
+    border-bottom:1px solid #e0e0e0;
+}
+tbody tr:hover{
+    background-color:#f9f9f9;
+}
+img{
+    vertical-align:middle;
+    border-radius:4px;
+}
+
+/* ----------  FORMULARIOS  ---------- */
+form{
+    max-width:500px;
+    margin:2rem auto;
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+}
+
+/*  NOTA: campos de entrada en ADMIN ahora en línea */
+/*  Se aplica solo al formulario del admin (id=frmProductos) */
+#frmProductos{
+    flex-direction:row;          /* campos a la par */
+    flex-wrap:wrap;              /* permiten bajar si no caben */
+    justify-content:center;
+    gap:.75rem;
+}
+#frmProductos input{
+    flex:1 1 150px;              /* mismo ancho flexible */
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"],
+textarea{
+    width:100%;
+    padding:.75rem 1rem;
+    border:1px solid #bbb;
+    border-radius:4px;
+    font-size:1rem;
+    transition:border-color .2s, box-shadow .2s;
+}
+input:focus,
+textarea:focus{
+    outline:none;
+    border-color:#004c99;
+    box-shadow:0 0 0 2px rgba(0,76,153,.15);
+}
+button[type="submit"]{
+    align-self:center;
+    padding:.75rem 2rem;
+    background-color:#004c99;
+    color:#fff;
+    border:none;
+    border-radius:4px;
+    font-size:1rem;
+    cursor:pointer;
+    transition:background .2s;
+}
+button[type="submit"]:hover{
+    background-color:#003366;
+}
+
+/* ----------  UTILITARIOS  ---------- */
+.center{
+    text-align:center;
+}
+.mt1{ margin-top:1rem; }
+.mb1{ margin-bottom:1rem; }
+
+/* ----------  ADMIN – botones en línea ---------- */
+.admin-actions{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:1rem;
+    margin:1.5rem 0;
+}
+
+/* NOTA: botón CERRAR SESIÓN más visible y grande */
+#btnLogout{
+    padding:1rem 2.2rem;        /* ← más grande */
+    background:#c0392b;
+    color:#fff;
+    border:none;
+    border-radius:6px;          /* ← esquinas más notorias */
+    font-size:1.2rem;           /* ← texto más grande */
+    cursor:pointer;
+    transition:background .2s, transform .1s;
+    box-shadow:0 2px 6px rgba(0,0,0,.15); /* ← sombra suave */
+}
+#btnLogout:hover{
+    background:#a03125;
+    transform:scale(1.03);      /* ← leve aumento al pasar el mouse */
+}
+
+/* NOTA: tabla admin nunca pasa de 900 px */
+#tblAdmin{
+    max-width:900px;
+    margin:2rem auto;
+    display:table;
+    width:100%;
+}
+
+/* NOTA: botones “Eliminar” más grandes */
+#tblAdmin .btnEliminar{
+    padding:.5rem 1.2rem;
+    font-size:.95rem;
+}
+
+/* ----------  LOGIN – card centrada ---------- */
+body.login-body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:#f5f5f5;
+}
+.login-card{
+    background:#fff;
+    padding:2.5rem 3rem;
+    border-radius:8px;
+    box-shadow:0 4px 18px rgba(0,0,0,.08);
+    width:100%;
+    max-width:420px;
+    text-align:center;
+}
+.login-card h1{
+    margin-bottom:1.5rem;
+    color:#003366;
+}
+.login-card form{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+}
+.login-card input,
+.login-card button{
+    width:100%;
+}
+
+/* NOTA: barra de búsqueda del catálogo más corta */
+#Buscador{
+    max-width:320px;      /* ← más angosta */
+    margin:1rem auto 2rem;
+    display:block;
+}

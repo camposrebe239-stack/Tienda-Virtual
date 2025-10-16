@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Catálogo</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="login.html">Admin</a></li>
+    </ul>
+</nav>
+
+<button onclick="CerrarSesion()">Cerrar sesión</button>
+
+<h1 style="text-align: center;">Administrar Inventario</h1>
+
+<form id="frmProductos">
+    <input type="text" id="nombre"placeholder="Producto", required>
+    <input type="text"id="descripcion" placeholder="Descripción", required>
+    <input type="number" id="precio" placeholder="Precio", required>
+    <input type="text" id="img" placeholder="URL de la imagen",required>
+    <button type="submit">Agregar Producto</button>
+</form>
+
+<table id="tblAdmin">
+    <thead>
+        <tr>
+            <th>Producto</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Imagen</th>
+            <th>Eliminar</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<script src="js/idb.min.js"></script>
+<script type="module" src="js/Inventario.indexed.js"></script>
+<script>
+if (sessionStorage.getItem('autenticado') !== 'true') {
+    alert('Acceso restringido. Inicia sesión.');
+    location.href = 'login.html';
+}
+function CerrarSesion() {
+    sessionStorage.removeItem('autenticado');
+    location.href = 'index.html';
+}
+</script>
+
+</body>
+</html>

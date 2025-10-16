@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Virtual.Rc</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="login.html">Admin</a></li>
+    </ul>
+</nav>
+
+<header>
+    <h1>Catálogo de productos</h1>
+    <p>Explora nuestros productos Tecnológicos</p>
+</header>
+    <input type="text" id="Buscador" placeholder="Buscar Productos.." autocomplete="off">
+    
+<table id="tblProductos">
+    <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Producto</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody id="tblCatalogo"></tbody>
+</table>
+<script src="js/idb.min.js"></script>
+<script type="module" src="js/productos.indexed.js"></script>
+</body>
+</html>

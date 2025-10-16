@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Catálogo</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="login.html">Admin</a></li>
+    </ul>
+</nav>
+
+<h1 style="text-align: center;">Ingreso</h1>
+
+<form id="frmLogin">
+    <input type="text" id="Usuario" placeholder="Usuario" required>
+    <input type="password" id="contrasenea" placeholder="Contrasena" required>
+    <button type="submit">Ingresar</button>
+    <a href="index.html" class="boton">⬅ Volver</a>
+</form>
+
+<script>
+document.getElementById('frmLogin').addEventListener('submit', e => {
+    e.preventDefault();
+    const user = document.getElementById('Usuario').value.trim();
+    const pass = document.getElementById('contrasenea').value.trim();
+
+    if (user === 'Ncampos' && pass === '1234') {
+        sessionStorage.setItem('autenticado', 'true');
+        location.href = 'admin.html';
+    } else {
+        alert('Usuario o contraseña incorrectos');
+    }
+});
+</script>
+
+</body>
+</html>
